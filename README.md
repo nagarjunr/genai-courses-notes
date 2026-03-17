@@ -1,4 +1,4 @@
-# Udemy Courses Notes
+# GenAI Courses Notes
 
 Personal notes from GenAI and AI-related Udemy courses.
 
