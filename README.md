@@ -16,12 +16,24 @@ Comprehensive notes covering:
 
 [Course Resources](https://edwarddonner.com/2026/02/17/ai-coder-vibe-coder-to-agentic-engineer/)
 
+### AI FDE - The Forward Deployed Engineer & Agentic AI Architect
+Instructor: Edward Donner
+
+One concept per note, written to stand alone. Start with the [index](AI-FDE_Forward-Deployed-Engineer-and-Agentic-AI-Architect/README.md). So far:
+- Tool calling
+- The agent loop
+
 ## Structure
 
 ```
 .
-├── AI Coder - Vibe Coder to Agentic Engineer in 3 Weeks/
-│   └── Notes.md
+├── AI-Coder_Vibe-Coder-to-Agentic-Engineer-in-3-Weeks/
+│   ├── Notes.md
+│   └── Notes.docx
+├── AI-FDE_Forward-Deployed-Engineer-and-Agentic-AI-Architect/
+│   ├── README.md
+│   ├── tool-calling.md
+│   └── agent-loop.md
 └── README.md
 ```
 
