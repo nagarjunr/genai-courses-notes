@@ -23,7 +23,7 @@ One concept per note, written to stand alone. Start with the [index](AI-FDE_Forw
 - Tool calling
 - The agent loop
 
-[Course Resources](https://edwarddonner.com/2026/10/14/ai-fde-the-forward-deployed-engineer-agentic-ai-architect/)
+[Course Resources](https://edwarddonner.com/2026/10/14/ai-fde-the-forward-deployed-engineer-agentic-ai-architect/) | [Udemy Course](https://www.udemy.com/course/ai-fde-forward-deployed-engineer-agentic-ai-architect)
 
 ## Structure
 
