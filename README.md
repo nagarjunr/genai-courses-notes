@@ -22,6 +22,9 @@ Instructor: Edward Donner
 One concept per note, written to stand alone. Start with the [index](AI-FDE_Forward-Deployed-Engineer-and-Agentic-AI-Architect/README.md). So far:
 - Tool calling
 - The agent loop
+- The spectrum of agent frameworks
+- Building an agent with LangChain create_agent
+- Decision models (Jev)
 
 [Course Resources](https://edwarddonner.com/2026/10/14/ai-fde-the-forward-deployed-engineer-agentic-ai-architect/) | [Udemy Course](https://www.udemy.com/course/ai-fde-forward-deployed-engineer-agentic-ai-architect)
 
@@ -35,7 +38,10 @@ One concept per note, written to stand alone. Start with the [index](AI-FDE_Forw
 ├── AI-FDE_Forward-Deployed-Engineer-and-Agentic-AI-Architect/
 │   ├── README.md
 │   ├── tool-calling.md
-│   └── agent-loop.md
+│   ├── agent-loop.md
+│   ├── agent-frameworks.md
+│   ├── langchain-create-agent.md
+│   └── jev-decision-models.md
 └── README.md
 ```
 

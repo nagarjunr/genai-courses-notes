@@ -7,7 +7,13 @@ Short, self-contained notes on how LLM agents work, one concept per file. Each n
 ### Agent fundamentals
 
 - [Tool calling](tool-calling.md): how a model asks your code to run a function, and how the result goes back.
-- [The agent loop](agent-loop.md): tool calling in a loop, the message history as memory, and a worked maze example.
+- [The agent loop](agent-loop.md): the big picture (user, harness, LLM, tools), tool calling in a loop, the message history as memory, and a worked maze example.
+- [The spectrum of agent frameworks](agent-frameworks.md): from direct LLM calls to batteries-included harnesses, and how to choose.
+- [Building an agent with LangChain create_agent](langchain-create-agent.md): model, `@tool` and `create_agent`, with a flow of one run.
+
+### Decision models
+
+- [Decision models (Jev)](jev-decision-models.md): a model that returns a choice and a confidence instead of text, and how to route on confidence.
 
 ## Course roadmap
 
@@ -20,6 +26,8 @@ What the course covers, by week. Ticked items have notes.
 - [ ] Harness engineering: building agents with LangChain, Deep Agents and the Claude Agent SDK
   - [x] [Tool calling](tool-calling.md)
   - [x] [The agent loop](agent-loop.md)
+  - [x] [The spectrum of agent frameworks](agent-frameworks.md)
+  - [x] [Building an agent with LangChain create_agent](langchain-create-agent.md)
 - [ ] Choosing between frontier, open-source and local LLMs on intelligence, speed, token cost and privacy
 
 ### Week 2: AI Architect

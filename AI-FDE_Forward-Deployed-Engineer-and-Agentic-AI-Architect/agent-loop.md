@@ -2,6 +2,65 @@
 
 An agent is tool calling wrapped in a loop: the model keeps asking for tools until it has enough to answer. This note assumes you know the basic round trip from [Tool calling](tool-calling.md).
 
+## What an agent is
+
+The course defines an agent as four things put together:
+
+> An agent = an LLM + tools + a loop + a goal
+
+| Part | In plain words |
+| --- | --- |
+| LLM | The model that reads text and decides what to do next. |
+| Tools | Functions it can ask for: search the web, query a database, run some code. |
+| Loop | It repeats, asking for tools and reading results, until it is done. |
+| Goal | The task it keeps working towards and stops when it has achieved. |
+
+The last three parts, tools, loop and goal, are the **harness**. So the same definition can be written shorter:
+
+> An agent = an LLM + a harness
+
+The harness is everything around the model that lets it accomplish a more complex goal than a single reply could.
+
+## The big picture
+
+Strip away the hype and an agent is made of four parts. The user and the model never talk to each other directly. Ordinary software, the **harness**, sits in the middle and does the work:
+
+```mermaid
+flowchart LR
+    U(["User"]) <--> H["Software<br/>(harness)"]
+    H <--> L(["LLM"])
+    H <--> T["Tools<br/>search the web, query a database, run some code"]
+```
+
+- The **user** gives the task and receives the answer.
+- The **LLM** only reads text and writes text. It can ask for a tool, but it cannot run one.
+- The **tools** are plain functions: search the web, query a database, run some code.
+- The **harness** is the program that connects them. It sends the user's task and the history to the LLM, runs any tool the LLM asks for, feeds the result back, and returns the final answer to the user.
+
+### How it feels vs. what happens
+
+It feels as if the LLM uses the tools itself. You ask a question, the model searches, queries and runs code, then answers:
+
+```mermaid
+flowchart LR
+    H["Software<br/>(harness)"] --> L(["LLM"])
+    L --> H
+    L <--> T["Tools<br/>search the web, query a database, run some code"]
+```
+
+That picture is wrong in one detail. The LLM never touches a tool. It only returns a message saying which tool it wants and with what arguments. The harness runs the tool and passes the result back in the next request:
+
+```mermaid
+flowchart LR
+    H["Software<br/>(harness)"] --> L(["LLM"])
+    L --> H
+    H <--> T["Tools<br/>search the web, query a database, run some code"]
+```
+
+The only difference is who is connected to the tools. That is why the harness is the place to add limits, checks and logging: every tool call passes through it.
+
+The loop below is what the harness does.
+
 ## The loop
 
 An agent is the same round trip wrapped in a loop. The model keeps asking for tools until it has enough to answer.
@@ -123,8 +182,8 @@ What the example teaches:
 
 | Term | Meaning |
 | --- | --- |
-| Harness | Everything around the model: tools, handler, loop, system prompt, limits. |
-| Agent | A model plus a harness that lets it call tools in a loop until the task is done. |
+| Harness | Everything around the model that lets it accomplish a more complex goal: tools, handler, loop, system prompt, limits. |
+| Agent | An LLM plus a harness. Spelled out: an LLM with tools, in a loop, working towards a goal. |
 
 ## Related
 
